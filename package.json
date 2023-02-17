@@ -1,0 +1,18 @@
+{
+  "name": "monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.18.6",
+    "lerna": "^6.4.1",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "web": "npm run -w @monorepo/web"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "extends": "@monorepo/internal/typescript/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src"
+  ]
+}

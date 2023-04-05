@@ -13,6 +13,11 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
+    "build:libs": "lerna run build:watch --parallel",
+    "dev": "concurrently npm:build:libs \"npm:web start\" -k",
     "web": "npm run -w @monorepo/web"
+  },
+  "dependencies": {
+    "concurrently": "^8.0.1"
   }
 }

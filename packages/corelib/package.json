@@ -7,10 +7,7 @@
     "directory": "dist"
   },
   "scripts": {
-    "build:s": "NODE_ENV=production babel src -d dist --copy-files --config-file @monorepo/internal/babel/build.js",
-    "build:babel": "NODE_ENV=production babel src -d dist --config-file @monorepo/internal/babel/build.js",
-    "build:tsc": "NODE_ENV=production tsc",
-    "postbuild:tsc": "cp package.json dist",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

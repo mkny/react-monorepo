@@ -1,0 +1,15 @@
+{
+  "name": "@monorepo/designsystem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "npm run build -- -w",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

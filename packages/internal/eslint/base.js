@@ -63,9 +63,6 @@ module.exports = {
     "import/first": "error",
     "import/newline-after-import": "error",
     "no-console": isDev ? "warn" : "error",
-    "no-restricted-imports": ["error", {
-      "patterns": ["*.svg", "*.png"]
-    }],
   },
   "overrides": [
     {

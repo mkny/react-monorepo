@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    build:
+      dockerfile: packages/internal/docker/template.Dockerfile
+      context: .
+      args:
+        - BUILD_PATH=/app/apps/react-app/build
+        - BUILD_SCOPE=@monorepo/web
+    ports:
+      - 8080:80

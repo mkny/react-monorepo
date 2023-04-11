@@ -17,6 +17,7 @@
     "dev": "concurrently npm:libs:watch \"npm:web start\" -k",
     "libs:watch": "lerna run build:watch --scope=@monorepo/{corelib,designsystem}",
     "libs:build": "lerna run build --scope=@monorepo/{corelib,designsystem}",
+    "storybook": "npm run -w @monorepo/designsystem storybook",
     "web": "npm run -w @monorepo/web"
   },
   "dependencies": {

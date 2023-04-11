@@ -29,6 +29,7 @@ module.exports = {
     "plugin:prettier/recommended",
   ],
   "rules": {
+    "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/no-unused-vars": isDev ? "warn" : "error",
     "@typescript-eslint/no-use-before-define": ["error"],
     "prettier/prettier": "error",
@@ -69,6 +70,7 @@ module.exports = {
       "files": ["*.ts", "*.tsx"],
       "rules": {
         "no-empty-pattern": "warn",
+        "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/ban-types": "warn"
       }
     }

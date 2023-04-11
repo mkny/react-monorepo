@@ -15,6 +15,7 @@
     "libs:watch": "lerna run build:watch --scope=@monorepo/{corelib,designsystem}",
     "libs:build": "lerna run build --scope=@monorepo/{corelib,designsystem}",
     "storybook": "npm run -w @monorepo/designsystem storybook",
+    "ci": "lerna run lint,test",
     "web": "npm run -w @monorepo/web"
   },
   "dependencies": {

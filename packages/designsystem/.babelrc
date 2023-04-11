@@ -1,0 +1,3 @@
+{
+  "extends": "@monorepo/internal/babel/base.js"
+}

@@ -11,21 +11,22 @@
     "node": ">=16",
     "yarn": "Please use NPM"
   },
-  "devDependencies": {
-  },
   "scripts": {
-    "lint": "lerna run lint",
+    "build:web": "",
+    "lint": "cross-env NODE_ENV=production lerna run lint",
+    "test": "cross-env NODE_ENV=test lerna run test",
     "dev": "concurrently npm:libs:watch \"npm:web start\" -k",
     "libs:watch": "lerna run build:watch --scope=@monorepo/{corelib,designsystem}",
     "libs:build": "lerna run build --scope=@monorepo/{corelib,designsystem}",
     "storybook": "npm run -w @monorepo/designsystem storybook",
-    "ci": "lerna run lint,test",
+    "ci": "concurrently npm:test npm:lint",
     "web": "npm run -w @monorepo/web"
   },
   "dependencies": {
+    "concurrently": "^8.0.1",
+    "cross-env": "^7.0.3",
     "lerna": "^6.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "concurrently": "^8.0.1"
+    "react-dom": "^18.2.0"
   }
 }

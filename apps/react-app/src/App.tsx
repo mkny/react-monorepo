@@ -1,4 +1,5 @@
 import { Button } from "@monorepo/designsystem";
+import { logger } from "@monorepo/corelib";
 import { MouseEvent } from "react";
 
 import logo from "./logo.svg";
@@ -6,7 +7,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 const handleClick = (evt: MouseEvent<HTMLButtonElement>) =>
-  console.log({ evt: evt.currentTarget.nodeName });
+  logger({ evt: evt.currentTarget.nodeName });
 
 function App() {
   return (

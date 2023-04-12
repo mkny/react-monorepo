@@ -1,5 +1,12 @@
+import { Button } from "@monorepo/designsystem";
+import { MouseEvent } from "react";
+
 import logo from "./logo.svg";
+
 import "./App.css";
+
+const handleClick = (evt: MouseEvent<HTMLButtonElement>) =>
+  console.log({ evt: evt.currentTarget.nodeName });
 
 function App() {
   return (
@@ -9,6 +16,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <Button label="my world is true" primary onClick={handleClick} />
         <a
           className="App-link"
           href="https://reactjs.org"

@@ -12,9 +12,12 @@
     "yarn": "Please use NPM"
   },
   "scripts": {
+    "prepare": "husky install",
     "postinstall": "npm run libs:build",
     "lint": "cross-env NODE_ENV=production lerna run lint",
+    "lint:fix": "npm run lint -- -- --fix",
     "test": "cross-env NODE_ENV=test lerna run test",
+    "test:ci": "npm run test -- -- --coverage=false --passWithNoTests --findRelatedTests",
     "dev": "concurrently npm:libs:watch \"npm:web start\" -k",
     "libs:watch": "lerna run build:watch --scope=@monorepo/{corelib,designsystem}",
     "libs:build": "lerna run build --scope=@monorepo/{corelib,designsystem}",
@@ -22,11 +25,25 @@
     "ci": "concurrently npm:test npm:lint",
     "web": "npm run -w @monorepo/web"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "pretty-quick --staged",
+      "npm run lint -- --fix",
+      "npm run test:ci"
+    ]
+  },
   "dependencies": {
-    "concurrently": "^8.0.1",
-    "cross-env": "^7.0.3",
-    "lerna": "^6.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/types": "^17.4.4",
+    "concurrently": "^8.0.1",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.0",
+    "lerna": "^6.4.1",
+    "pretty-quick": "^3.1.3"
   }
 }

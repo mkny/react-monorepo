@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-module.exports = (options) => ({
+module.exports = () => ({
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -28,20 +28,16 @@ module.exports = (options) => ({
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
     "/node_modules/",
-    "/*.stories.*"
+    "/dist/",
+    "/build/",
+    "/*.stories.*",
   ],
 
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
 
   // A list of reporter names that Jest uses when writing coverage reports
-  coverageReporters: [
-    "json",
-    "text",
-    "lcov",
-    "clover",
-    "cobertura"
-  ],
+  coverageReporters: ["json", "text", "lcov", "clover", "cobertura"],
 
   // An object that configures minimum threshold enforcement for coverage results
   coverageThreshold: {
@@ -95,7 +91,7 @@ module.exports = (options) => ({
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
-  // modulePathIgnorePatterns: [],
+  modulePathIgnorePatterns: ["<rootDir>/dist/", "<rootDir>/build/"],
 
   // Activates notifications for test results
   // notify: false,
@@ -139,9 +135,7 @@ module.exports = (options) => ({
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: [
-    require.resolve('./extend-expects')
-  ],
+  setupFilesAfterEnv: [require.resolve("./extend-expects")],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,

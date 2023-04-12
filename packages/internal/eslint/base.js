@@ -1,51 +1,51 @@
 const isDev = process.env.NODE_ENV !== "production";
 
 module.exports = {
-  "root": true,
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+  root: true,
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
-  "env": {
-    "jest": true,
-    "browser": true,
-    "node": true,
-    "es2020": true
+  env: {
+    jest: true,
+    browser: true,
+    node: true,
+    es2020: true,
   },
   plugins: ["@typescript-eslint", "import", "prettier"],
-  "settings": {
+  settings: {
     "import/internal-regex": "^(assets|common|components|hooks)/",
-    "react": {
-      "version": "detect"
-    }
+    react: {
+      version: "detect",
+    },
   },
-  "extends": [
+  extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
   ],
-  "rules": {
+  rules: {
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/no-unused-vars": isDev ? "warn" : "error",
     "@typescript-eslint/no-use-before-define": ["error"],
     "prettier/prettier": "error",
-    "indent": ["error", 2],
+    indent: ["error", 2],
     "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "double"],
-    "semi": ["error", "always"],
+    quotes: ["error", "double"],
+    semi: ["error", "always"],
     "arrow-body-style": ["error", "as-needed"],
     "prefer-template": "error",
-    "complexity": ["error", 5],
+    complexity: ["error", 5],
     "import/no-duplicates": "error",
     "import/order": [
       "error",
       {
         "newlines-between": "always",
-        "groups": [
+        groups: [
           "builtin",
           "external",
           "internal",
@@ -65,15 +65,15 @@ module.exports = {
     "import/newline-after-import": "error",
     "no-console": isDev ? "warn" : "error",
   },
-  "overrides": [
+  overrides: [
     {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {
+      files: ["*.ts", "*.tsx"],
+      rules: {
         "no-empty-pattern": "warn",
         "@typescript-eslint/no-var-requires": "off",
-        "@typescript-eslint/ban-types": "warn"
-      }
-    }
+        "@typescript-eslint/ban-types": "warn",
+      },
+    },
   ],
-  "ignorePatterns": ["lib", "dist", "build", "android", "node_modules"]
-}
+  ignorePatterns: ["lib", "dist", "build", "android", "node_modules"],
+};

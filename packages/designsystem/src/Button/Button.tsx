@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { CSSProperties, DOMAttributes } from "react";
 import "./button.css";
 
 export enum Sizes {
@@ -11,9 +11,8 @@ type IProps = {
   primary?: boolean;
   size: Sizes;
   label: string;
-  onClick: () => void;
   backgroundColor?: CSSProperties["backgroundColor"];
-};
+} & Pick<DOMAttributes<HTMLButtonElement>, "onClick">;
 
 /**
  * Primary UI component for user interaction

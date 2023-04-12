@@ -4,13 +4,17 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "build:watch": "npm run build -- -w",
+    "build:babel": "babel src -d dist --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored --config-file ./babel.config.build.js",
+    "build:babel:watch": "npm run build:babel -- --watch",
+    "build:tsc": "tsc",
+    "build:tsc:watch": "npm run build:tsc -- --watch",
+    "build:watch": "concurrently npm:build:*:watch",
+    "build": "concurrently npm:build:tsc npm:build:babel",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "test": "jest --ci",
     "test:dev": "jest",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build:storybook": "storybook build"
   },
   "peerDependencies": {
     "react": "^18.2.0",

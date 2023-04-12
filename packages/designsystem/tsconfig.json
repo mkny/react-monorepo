@@ -3,9 +3,15 @@
   "compilerOptions": {
     "outDir": "dist",
     "declaration": true,
-    "noEmit": false
+    "noEmit": false,
+    "emitDeclarationOnly": true
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "**/*.test.*",
+    "**/*.stories.*",
+    "**/stories"
   ]
 }

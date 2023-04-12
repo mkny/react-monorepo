@@ -7,14 +7,22 @@
     "directory": "dist"
   },
   "scripts": {
-    "build": "tsc",
-    "build:watch": "npm run build -- -w",
+    "build:babel": "babel src -d dist --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored --config-file ./babel.config.build.js",
+    "build:babel:watch": "npm run build:babel -- --watch",
+    "build:tsc": "tsc",
+    "build:tsc:watch": "npm run build:tsc -- --watch",
+    "build:watch": "concurrently npm:build:*:watch",
+    "build": "concurrently npm:build:tsc npm:build:babel",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "test": "jest --ci --passWithNoTests"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "dependencies": {
     "@monorepo/internal": "*"
   }

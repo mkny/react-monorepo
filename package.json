@@ -12,6 +12,7 @@
     "yarn": "Please use NPM"
   },
   "scripts": {
+    "postinstall": "npm run libs:build",
     "lint": "cross-env NODE_ENV=production lerna run lint",
     "test": "cross-env NODE_ENV=test lerna run test",
     "dev": "concurrently npm:libs:watch \"npm:web start\" -k",

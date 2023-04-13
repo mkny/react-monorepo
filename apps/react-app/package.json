@@ -27,5 +27,34 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/",
+      "/build/",
+      "/*.stories.*",
+      "/index.tsx",
+      "/reportWebVitals.ts",
+      "/*.d.ts"
+    ],
+    "coverageReporters": [
+      "json",
+      "text",
+      "lcov",
+      "clover",
+      "cobertura"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
   }
 }

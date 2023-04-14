@@ -14,7 +14,8 @@
     "build:watch": "concurrently npm:build:*:watch",
     "build": "concurrently npm:build:tsc npm:build:babel",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
-    "test": "jest --ci --passWithNoTests"
+    "test": "jest --ci",
+    "test:dev": "jest"
   },
   "keywords": [],
   "author": "",

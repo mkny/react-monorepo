@@ -19,11 +19,12 @@ module.exports = {
   plugins: ["@typescript-eslint", "import", "prettier"],
   settings: {
     "import/internal-regex": "^(assets|common|components|hooks)/",
-    react: {
+    "react": {
       version: "detect",
     },
   },
   extends: [
+    "standard",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
@@ -33,19 +34,19 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": isDev ? "warn" : "error",
     "@typescript-eslint/no-use-before-define": ["error"],
     "prettier/prettier": "error",
-    indent: ["error", 2],
+    "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
-    quotes: ["error", "double"],
-    semi: ["error", "always"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
     "arrow-body-style": ["error", "as-needed"],
     "prefer-template": "error",
-    complexity: ["error", 5],
+    "complexity": ["error", 5],
     "import/no-duplicates": "error",
     "import/order": [
       "error",
       {
         "newlines-between": "always",
-        groups: [
+        "groups": [
           "builtin",
           "external",
           "internal",

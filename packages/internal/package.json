@@ -1,8 +1,7 @@
 {
   "name": "@monorepo/internal",
   "version": "1.0.0",
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,7 +20,6 @@
     "@types/react-dom": "^18.0.11",
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-jsdoc": "^40.1.1",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.7",
     "typescript": "^4.9.5"

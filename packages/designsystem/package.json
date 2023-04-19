@@ -13,6 +13,8 @@
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "test": "jest --ci",
     "test:dev": "jest --watchAll",
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
+    "prestorybook": "npm run test:generate-output",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build"
   },
@@ -27,16 +29,16 @@
     "@monorepo/internal": "*"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.4",
-    "@storybook/addon-interactions": "^7.0.4",
-    "@storybook/addon-links": "^7.0.4",
-    "@storybook/addon-mdx-gfm": "^7.0.4",
-    "@storybook/blocks": "^7.0.4",
-    "@storybook/react": "^7.0.4",
-    "@storybook/react-webpack5": "^7.0.4",
+    "@storybook/addon-essentials": "^7.0.6",
+    "@storybook/addon-interactions": "^7.0.6",
+    "@storybook/addon-jest": "^7.0.6",
+    "@storybook/addon-links": "^7.0.6",
+    "@storybook/blocks": "^7.0.6",
+    "@storybook/react": "^7.0.6",
+    "@storybook/react-webpack5": "^7.0.6",
     "@storybook/testing-library": "^0.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.0.4"
+    "storybook": "^7.0.6"
   }
 }

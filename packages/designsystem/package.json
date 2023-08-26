@@ -13,7 +13,7 @@
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "test": "jest --ci",
     "test:dev": "jest --watchAll",
-    "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
+    "test:generate-output": "jest --json --outputFile=./coverage/jest-test-results.json",
     "prestorybook": "npm run test:generate-output",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build"

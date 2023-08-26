@@ -1,4 +1,4 @@
-import results from "../.jest-test-results.json";
+import results from "../coverage/jest-test-results.json";
 import { withTests } from "@storybook/addon-jest";
 
 /** @type { import('@storybook/react').Preview } */
